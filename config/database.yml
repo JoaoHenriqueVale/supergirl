@@ -1,0 +1,23 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV.fetch('DB_USERNAME') %>
+  password: <%= ENV['DB_PASSWORD'] %>
+  host: <%= ENV.fetch('DB_HOST') %>
+
+staging:
+  <<: *default
+  database: supergirl_production
+
+development:
+  <<: *default
+  database: supergirl_development
+
+test:
+  <<: *default
+  database: supergirl_test
+
+production:
+  <<: *default
+  database: supergirl_production
