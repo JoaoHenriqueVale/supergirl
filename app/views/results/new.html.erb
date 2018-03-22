@@ -1,0 +1,56 @@
+<h3 class="text-center"><%= @my_survey.name %></h3>
+<%= simple_form_for(@result, url: survey_results_path) do |f| %>
+  <% @questions.each do |question| %>
+    <div class="container questions-girl">
+      <div class="row">
+        <div class="col-sm-12">
+          <p><%= question.text %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="container">
+          <% @survey.results.each do |result| %>
+            <%= f.fields_for 'results[]', result do |r| %>
+              <div class="filds-girl">
+                <div class="col-sm-7">
+                  <%= image_tag "#{r.object.girl.avatar}", class: 'avatar' %>
+                  <%= r.object.girl.name %>
+                </div>
+                <div class="col-sm-4 text-right">
+                  <div data-role="ratingbar" questgirl="<%= "q#{question.id}_g#{r.object.girl.id}" %>" data-steps="2">
+                    <ul>
+                      <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                      <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                      <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                      <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                      <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                    </ul>
+                    <%= r.hidden_field :rating, class: "q#{question.id}_g#{r.object.girl.id}" %>
+                    <%= r.hidden_field :girl, value: r.object.girl.id %>
+                    <%= r.hidden_field :question, value: question.id %>
+                  </div>
+                </div>
+                <div class="col-sm-1">
+                  <span class="span_<%= "q#{question.id}_g#{r.object.girl.id}" %>">0.0</span>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <hr>
+  <% end %>
+  <%= f.button :submit, class: 'pull-right btn-primary' %>
+<% end %>
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    $( '[data-role="ratingbar"]' )
+       .ratingbar()
+       .click(function() {
+        questgirl = $( this ).attr( 'questgirl' );
+        $("."+questgirl).val($( this ).attr( 'data-value' ));
+        return false;
+    });
+  });
+<% end %>

@@ -1,0 +1,22 @@
+body{
+    background-image: url("background.jpg");
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+html,body{
+  position: relative;
+  height: 100%;
+}
+.btn-info {
+  color: #fff;
+  background-color: #ed759f !important;
+  border-color: #ea6698 !important;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #703679 !important;
+    border-color: #703679 !important;
+}
+.hidden-link {
+  display: none !important;
+}

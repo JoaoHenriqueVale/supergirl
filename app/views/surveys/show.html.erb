@@ -1,0 +1,67 @@
+<div class="col-sm-12 text-center">
+  <h3><%= @survey.name %></h3>
+  <div class="first-result-box">
+    <div class="col-sm-12">
+      <%= image_tag "first-place.webp", class: 'first-place' %>
+      <%= image_tag "crown-first.png", class: 'crown-place' %>
+      <%= image_tag "#{@result_first[0].avatar}", class: 'avatar-first' %>
+    </div>
+    <div class="col-sm-12">
+      <%= @result_first[0].name %>
+    </div>
+    <div class="col-sm-12">
+      <%= @result_first[1].round(1) %>
+    </div>
+    <div class="col-sm-12">
+      <div data-role="ratingbarshow" data-steps="2" avg="<%= @result_first[1].round(2) %>">
+        <ul>
+          <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<table class="table results" style="<%= display_none_user %>">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Média</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @results_another.each_with_index do |(girl, avg), index| %>
+      <tr>
+        <td><%= index + 2 %>º</td>
+        <td>
+          <%= image_tag "#{girl.avatar}", class: 'avatar' %>
+          <%= girl.name %>
+        </td>
+        <td>
+          <div data-role="ratingbarshow" data-steps="2" avg="<%= avg.round(1) %>">
+            <ul>
+              <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+              <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+            </ul>
+          </div>
+          <span class="avg-result"><%= avg.round(1) %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= javascript_tag do %>
+  $(document).ready(function() {
+    $( '[data-role="ratingbarshow"]' )
+    .ratingbarshow().click(function() {
+      return false;
+    });
+  });
+<% end %>
