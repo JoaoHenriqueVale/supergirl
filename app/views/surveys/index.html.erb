@@ -1,0 +1,14 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Status</th>
+      <th>Editar</th>
+      <th>Deletar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: 'survey', collection: @surveys %>
+  </tbody>
+</table>
+<%= link_to "Novo", new_survey_path, class: 'btn pull-right btn-primary' %>

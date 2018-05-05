@@ -1,0 +1,8 @@
+<tr>
+  <td><%= survey.name %></td>
+  <td>
+    <%= link_to verify_link_survey_user(survey) do %>
+      <%= verify_survey_user?(survey) ? 'Vizualizar' : 'Responder' %>
+    <% end %>
+  </td>
+</tr>

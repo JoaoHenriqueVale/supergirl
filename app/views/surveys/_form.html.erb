@@ -1,0 +1,12 @@
+<%= simple_form_for @survey do |f| %>
+  <div class="form-group col-sm-12">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group col-sm-12">
+    <%= f.input :status, as: :select, collection: [['Ativado',true],['Desativado',false]], include_blank: false, checked: f.object.status %>
+  </div>
+  <div class="form-group">
+   <%= f.button :submit, class: "btn btn-primary form-control"%>
+ </div>
+<% end %>

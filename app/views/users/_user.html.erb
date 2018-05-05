@@ -1,0 +1,13 @@
+<tr>
+  <td><%= user.name %></td>
+  <td class="text-center">
+    <%= link_to edit_user_path(user) do %>
+      <span class="glyphicon glyphicon-pencil"></span>
+    <% end %>
+  </td>
+  <!--<td>
+    <%= link_to user,  method: :delete, data: { confirm: 'Tem certeza?' } do %>
+    <span class="glyphicon glyphicon-trash"></span>
+    <% end %>
+  </td>-->
+</tr>

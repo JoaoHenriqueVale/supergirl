@@ -1,0 +1,13 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Pergunta</th>
+      <th>Editar</th>
+      <th>Deletar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: 'question', collection: @questions %>
+  </tbody>
+</table>
+<%= link_to "Novo", new_question_path, class: 'btn pull-right btn-primary' %>

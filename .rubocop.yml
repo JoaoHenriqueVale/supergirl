@@ -1,0 +1,38 @@
+AllCops:
+  TargetRubyVersion: 2.4.1
+  Exclude:
+    - 'bin/**/*'
+    - 'vendor/**/*'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'lib/tasks/*.rake'
+    - 'lib/tasks/rake_helper.rb'
+    - 'spec/spec_helper.rb'
+    - 'spec/rails_helper.rb'
+    - 'spec/teaspoon_env.rb'
+    - 'node_modules/**/*'
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/LineLength:
+  Max: 120
+  Exclude:
+    - 'spec/services/**/*'
+    - 'spec/factories/**/*'
+
+Documentation:
+  Enabled: false
+
+AsciiComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: indented
+
+Rails:
+  Enabled: true

@@ -1,0 +1,9 @@
+<div class="login-container">
+  <div class="avatar"></div>
+  <div class="form-box">
+    <%= simple_form_for @user, url: sessions_path do |f| %>
+      <%= f.input :cpf, as: :integer, placeholder: 'Digite seu CPF', class: 'cpf' %>
+      <%= f.button :submit, 'Entrar', class: 'btn btn-info btn-block login' %>
+    <% end %>
+  </div>
+</div>
