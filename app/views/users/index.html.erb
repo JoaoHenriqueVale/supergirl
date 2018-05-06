@@ -1,12 +1,12 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Nome</th>
-      <th>Editar</th>
-      <!--<th>Deletar</th>-->
+      <th><%= t('texts.user.name') %></th>
+      <th><%= t('texts.user.edit') %></th>
     </tr>
   </thead>
   <tbody>
     <%= render partial: 'user', collection: @users %>
   </tbody>
 </table>
+<%= link_to t('texts.user.new'), new_user_path, class: 'btn pull-right btn-primary' %>

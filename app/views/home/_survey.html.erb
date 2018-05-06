@@ -2,7 +2,7 @@
   <td><%= survey.name %></td>
   <td>
     <%= link_to verify_link_survey_user(survey) do %>
-      <%= verify_survey_user?(survey) ? 'Vizualizar' : 'Responder' %>
+      <%= verify_survey_user?(survey) ? t('texts.home.show') : t('texts.home.edit') %>
     <% end %>
   </td>
 </tr>

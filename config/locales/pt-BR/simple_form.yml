@@ -1,0 +1,27 @@
+pt-BR:
+  helpers:
+    submit:
+      user:
+        create: "Gerar Menina"
+        update: "Atualizar Menina"
+      survey:
+        create: "Gerar Pesquisa"
+        update: "Atualizar Pesquisa"
+      question:
+        create: "Gerar Pergunta"
+        update: "Atualizar Pergunta"
+      result:
+        create: "Votar"
+  simple_form:
+    errors: 'Por favor preencher todos os campos grifados'
+    labels:
+      user:
+        name: "Nome:"
+        cpf: "Cpf:"
+        avatar: "Foto:"
+        admin: "Lider:"
+      survey:
+        name: "Nome:"
+        status: "Status:"
+      question:
+        text: "Texto:"

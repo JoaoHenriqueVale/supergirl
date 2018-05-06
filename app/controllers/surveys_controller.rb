@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class SurveysController < ApplicationController
-  before_action :logged_admin
+  before_action :logged_user
 
   def index
     @surveys = Survey.all

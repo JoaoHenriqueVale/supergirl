@@ -1,14 +1,14 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Nome</th>
-      <th>Status</th>
-      <th>Editar</th>
-      <th>Deletar</th>
+      <th><%= t('texts.survey.name') %></th>
+      <th><%= t('texts.survey.status') %></th>
+      <th><%= t('texts.survey.edit') %></th>
+      <th><%= t('texts.survey.delete') %></th>
     </tr>
   </thead>
   <tbody>
     <%= render partial: 'survey', collection: @surveys %>
   </tbody>
 </table>
-<%= link_to "Novo", new_survey_path, class: 'btn pull-right btn-primary' %>
+<%= link_to t('texts.survey.new'), new_survey_path, class: 'btn pull-right btn-primary' %>

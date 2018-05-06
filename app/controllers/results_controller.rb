@@ -8,7 +8,7 @@ class ResultsController < ApplicationController
     @survey = Survey.new
     @my_survey = Survey.find(params[:survey_id])
     @questions = Question.all
-    users = User.all.reject { |user| user == current_user }
+    users = User.all.reject { |user| user == current_user || user.admin }
     users.each do |user|
       @survey.results.build(user: current_user, girl: user)
     end
@@ -17,7 +17,7 @@ class ResultsController < ApplicationController
   def create
     survey = Survey.find(params[:survey_id])
     insert_results params_result['results'], survey
-    redirect_to surveys_path
+    redirect_to root_path
   end
 
   private

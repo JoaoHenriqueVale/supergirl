@@ -1,0 +1,30 @@
+pt-BR:
+  texts:
+      application:
+        exit: 'Sair'
+        home: 'Home'
+        question: 'Perguntas'
+        survey: 'Pesquisas'
+        user: 'Meninas'
+      home:
+        name: 'Nome'
+        show: 'Vizualizar'
+        edit: 'Responder'
+      question:
+        question: 'Pergunta'
+        delete: 'Deletar'
+        edit: 'Editar'
+        new: 'Criar'
+      survey:
+        name: 'Nome'
+        delete: 'Deletar'
+        edit: 'Editar'
+        new: 'Criar'
+        status: 'Status'
+        avg: 'Média'
+      user:
+        name: 'Nome'
+        delete: 'Deletar'
+        edit: 'Editar'
+        new: 'Criar'
+        open: 'Entrar'

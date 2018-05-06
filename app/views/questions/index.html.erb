@@ -1,13 +1,13 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Pergunta</th>
-      <th>Editar</th>
-      <th>Deletar</th>
+      <th><%= t('texts.question.question') %></th>
+      <th><%= t('texts.question.edit') %></th>
+      <th><%= t('texts.question.delete') %></th>
     </tr>
   </thead>
   <tbody>
     <%= render partial: 'question', collection: @questions %>
   </tbody>
 </table>
-<%= link_to "Novo", new_question_path, class: 'btn pull-right btn-primary' %>
+<%= link_to t('texts.question.new'), new_question_path, class: 'btn pull-right btn-primary' %>

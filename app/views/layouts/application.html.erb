@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Supergirl</title>
+  <title>Femme Girl</title>
+  <%= favicon_link_tag 'icone.ico', rel: 'icon', type: 'image/jpg' %>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= stylesheet_link_tag    'style', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -23,17 +24,17 @@
     <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-6" aria-expanded="false" style="height: 1px;">
       <ul class="nav navbar-nav">
         <li>
-          <a href="<%= root_path %>">Home</a>
+          <%= link_to t('texts.application.home'), root_path %>
         </li>
         <li class="<%= hidden_link %>">
-          <%= link_to "Pesquisas", surveys_path %>
+          <%= link_to t('texts.application.survey'), surveys_path %>
         </li>
         <li class="<%= hidden_link %>">
-          <%= link_to "Perguntas", questions_path %>
+          <%= link_to t('texts.application.question'), questions_path %>
         </li>
         </li>
         <li class="<%= hidden_link %>">
-          <%= link_to "Meninas", users_path %>
+          <%= link_to t('texts.application.user'), users_path %>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -44,7 +45,7 @@
           </a>
         </li>
         <li>
-          <%= link_to "Sair", session_path(current_user), method: "delete", class: 'logout' %>
+          <%= link_to t('texts.application.exit'), session_path(current_user), method: "delete", class: 'logout' %>
         </li>
       </ul>
     </div>
