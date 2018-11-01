@@ -9,11 +9,6 @@ Super Girl é uma aplicação interna, responsável pela votação da funcionari
 
  - Ter [Ruby](https://www.ruby-lang.org) versão 2.3.3 previamente instalado na máquina
 
-### Configurando e executando testes
-
- - `bin/setup`
- - `bundle exec rspec`
-
 #### Docker
  - `docker-compose build`
  - `docker-compose run --rm web bin/setup`
